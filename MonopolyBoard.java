@@ -141,8 +141,6 @@ public class MonopolyBoard extends JFrame {
         add(new MonopolyField("go to jail"));
 
         
-        add(new MonopolyField("go to jail"));
-        
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
