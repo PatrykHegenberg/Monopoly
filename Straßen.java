@@ -1,3 +1,5 @@
+//Klasse "Straße" erstellen
+
 public class Straßen extends Spielfeld {
 
 //Attribute
@@ -10,12 +12,12 @@ public boolean istGekauft;
 public boolean möchteKaufen;
 public String Besitzer;
 
-//Klasse Ereigniskarte erstellen und initailisieren der LinkedList "Straßen"
+//Initailisieren der LinkedList "Straßen"
 
 
 private LinkedList<Straßen> Straßen = new LinkedList<String>(ID,Name,Kaufpreis,Miete,Besitzer);
 
-//Hinzufuegen der Ereigniskarten
+//Hinzufuegen der Straßen
 {
     Straßen.add(2,"Badstraße",1200,10,"");
     Straßen.add(4,"Turmstraße",1200,10,"");
