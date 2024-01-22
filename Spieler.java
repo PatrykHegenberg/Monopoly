@@ -1,4 +1,3 @@
-package Monopoly2;
 
 import java.awt.Color;
 import java.util.Random;
@@ -45,7 +44,7 @@ public class Spieler {
     public void setPosition() {
     	position += this.gesamtWurf;
     	
-    	int MAX_POSITION = 40;
+    	final int MAX_POSITION = 39;
     	if (position >= MAX_POSITION) {
            position -= MAX_POSITION;
            System.out.println(name + " ist einmal um das Spielfeld gegangen!");
@@ -62,12 +61,13 @@ public class Spieler {
     	Würfel würfel = new Würfel();
     	
 
+    	würfel.wuerfeln1();
+    	würfel.wuerfeln2();
+        int gesamtwurf = würfel.getSumme();
 
-        int gesamtwurf = würfel.getGesamtWurf();
-
-        System.out.println(name + " würfelt eine " + würfel.getErgibnis1() + " und eine " + würfel.getErgibnis2() + " (Gesamtwurf: " + gesamtwurf + ")");
+        System.out.println(name + " würfelt eine " + würfel.getErgebnis1() + " und eine " + würfel.getErgebnis2() + " (Gesamtwurf: " + gesamtwurf + ")");
         
-        this.gesamtWurf = würfel.getGesamtWurf();
+        this.gesamtWurf = würfel.getSumme();
  
 
       
