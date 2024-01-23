@@ -19,28 +19,28 @@ private LinkedList<Straßen> Straßen = new LinkedList<String>(ID,Name,Kaufpreis
 
 //Hinzufuegen der Straßen
 {
-    Straßen.add(2,"Badstraße",1200,10,"");
-    Straßen.add(4,"Turmstraße",1200,10,"");
-    Straßen.add(7,"Chausseestraße",2000,10,"");
-    Straßen.add(9,"Elisenstraße",2000,10,"");
-    Straßen.add(10,"Poststraße",2400,10,"");
+    Straßen.add(2,"Badstraße",1200,2,"");
+    Straßen.add(4,"Turmstraße",1200,4,"");
+    Straßen.add(7,"Chausseestraße",2000,6,"");
+    Straßen.add(9,"Elisenstraße",2000,6,"");
+    Straßen.add(10,"Poststraße",2400,8,"");
     Straßen.add(12,"Seestraße",2800,10,"");
     Straßen.add(14,"Hafenstraße",10,"");
     Straßen.add(15,"Neue Straße",10,"");
-    Straßen.add(17,"Münchnerstraße",10,"");
-    Straßen.add(19,"Wienerstraße",10,"");
-    Straßen.add(20,"Berlinerstraße",10,"");
-    Straßen.add(22,"Theaterstraße",10,"");
-    Straßen.add(24,"Museumstraße",10,"");
-    Straßen.add(25,"Opernplatz",10,"");
-    Straße.add(27,"Lessingstraße",10,"");
-    Straßen.add(28,"Schillerstraße",10,"");
-    Straßen.add(30,"Goethestraße",10,"");
-    Straßen.add(32,"Rathausplatz",10,"");
-    Straßen.add(33,"Hauptstraße",10,"");
-    Straßen.add(35,"Bahnhofstraße",10,"");
-    Straßen.add(38,"Parkstraße",10,"");
-    Straßen.add(40,"Schlossallee",10,"");
+    Straßen.add(17,"Münchnerstraße",14,"");
+    Straßen.add(19,"Wienerstraße",14,"");
+    Straßen.add(20,"Berlinerstraße",16,"");
+    Straßen.add(22,"Theaterstraße",18,"");
+    Straßen.add(24,"Museumstraße",18,"");
+    Straßen.add(25,"Opernplatz",20,"");
+    Straße.add(27,"Lessingstraße",22,"");
+    Straßen.add(28,"Schillerstraße",22,"");
+    Straßen.add(30,"Goethestraße",24,"");
+    Straßen.add(32,"Rathausplatz",26,"");
+    Straßen.add(33,"Hauptstraße",26,"");
+    Straßen.add(35,"Bahnhofstraße",28,"");
+    Straßen.add(38,"Parkstraße",35,"");
+    Straßen.add(40,"Schlossallee",50,"");
 }
 
 // Setter-Methoden
