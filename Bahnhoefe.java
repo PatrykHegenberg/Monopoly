@@ -18,10 +18,10 @@ public class Bahnhoefe extends Spielfeld {
     
     //Hinzufuegen der Bahnhoefe
     {
-        Bahnhoefe.add(6,"Suedbahnhof",4000,25,istGekauft,Besitzer);
-        Bahnhoefe.add(16,"Westbahnhof",4000,25,istGekauft,Besitzer);
-        Bahnhoefe.add(26,"Nordbahnhof",4000,25,istGekauft,Besitzer);
-        Bahnhoefe.add(36,"Hauptbahnhof",4000,6,istGekauft,Besitzer);
+        Bahnhoefe.add(5,"Suedbahnhof",4000,25,istGekauft,Besitzer);
+        Bahnhoefe.add(15,"Westbahnhof",4000,25,istGekauft,Besitzer);
+        Bahnhoefe.add(25,"Nordbahnhof",4000,25,istGekauft,Besitzer);
+        Bahnhoefe.add(35,"Hauptbahnhof",4000,6,istGekauft,Besitzer);
     }  
     
     // Setter-Methoden
