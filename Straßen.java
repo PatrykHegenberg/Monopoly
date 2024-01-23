@@ -1,6 +1,6 @@
-//Klasse "Straße" erstellen
+//Klasse "Strasse" erstellen
 
-public class Straßen extends Spielfeld {
+public class Strassen extends Spielfeld {
 
 //Attribute
 
@@ -9,38 +9,37 @@ public String Name;
 public int Kaufpreis;
 public int Miete;
 public boolean istGekauft;
-public boolean möchteKaufen;
 public String Besitzer;
 
-//Initailisieren der LinkedList "Straßen"
+//Initailisieren der LinkedList "Strassen"
 
 
-private LinkedList<Straßen> Straßen = new LinkedList<String>(ID,Name,Kaufpreis,Miete,Besitzer);
+private LinkedList<Strassen> Strassen = new LinkedList<String>(ID,Name,Kaufpreis,Miete,istGekauft,Besitzer);
 
-//Hinzufuegen der Straßen
+//Hinzufuegen der Strassen
 {
-    Straßen.add(2,"Badstraße",1200,2,"");
-    Straßen.add(4,"Turmstraße",1200,4,"");
-    Straßen.add(7,"Chausseestraße",2000,6,"");
-    Straßen.add(9,"Elisenstraße",2000,6,"");
-    Straßen.add(10,"Poststraße",2400,8,"");
-    Straßen.add(12,"Seestraße",2800,10,"");
-    Straßen.add(14,"Hafenstraße",10,"");
-    Straßen.add(15,"Neue Straße",10,"");
-    Straßen.add(17,"Münchnerstraße",14,"");
-    Straßen.add(19,"Wienerstraße",14,"");
-    Straßen.add(20,"Berlinerstraße",16,"");
-    Straßen.add(22,"Theaterstraße",18,"");
-    Straßen.add(24,"Museumstraße",18,"");
-    Straßen.add(25,"Opernplatz",20,"");
-    Straße.add(27,"Lessingstraße",22,"");
-    Straßen.add(28,"Schillerstraße",22,"");
-    Straßen.add(30,"Goethestraße",24,"");
-    Straßen.add(32,"Rathausplatz",26,"");
-    Straßen.add(33,"Hauptstraße",26,"");
-    Straßen.add(35,"Bahnhofstraße",28,"");
-    Straßen.add(38,"Parkstraße",35,"");
-    Straßen.add(40,"Schlossallee",50,"");
+    Strassen.add(2,"Badstrasse",1200,2,istGekauft,Besitzer);
+    Strassen.add(4,"Turmstrasse",1200,4,istGekauft,Besitzer);
+    Strassen.add(7,"Chausseestrasse",2000,6,istGekauft,Besitzer);
+    Strassen.add(9,"Elisenstrasse",2000,6,istGekauft,Besitzer);
+    Strassen.add(10,"Poststrasse",2400,8,istGekauft,Besitzer);
+    Strassen.add(12,"Seestrasse",2800,10,istGekauft,Besitzer);
+    Strassen.add(14,"Hafenstrasse",10,istGekauft,Besitzer);
+    Strassen.add(15,"Neue Strasse",10,istGekauft,Besitzer);
+    Strassen.add(17,"Muenchnerstrasse",14,istGekauft,Besitzer);
+    Strassen.add(19,"Wienerstrasse",14,istGekauft,Besitzer);
+    Strassen.add(20,"Berlinerstrasse",16,istGekauft,Besitzer);
+    Strassen.add(22,"Theaterstrasse",18,istGekauft,Besitzer);
+    Strassen.add(24,"Museumstrasse",18,istGekauft,Besitzer);
+    Strassen.add(25,"Opernplatz",20,istGekauft,Besitzer);
+    Strasse.add(27,"Lessingstrasse",22,istGekauft,Besitzer);
+    Strassen.add(28,"Schillerstrasse",22,istGekauft,Besitzer);
+    Strassen.add(30,"Goethestrasse",24,istGekauft,Besitzer);
+    Strassen.add(32,"Rathausplatz",26,istGekauft,Besitzer);
+    Strassen.add(33,"Hauptstrasse",26,istGekauft,Besitzer);
+    Strassen.add(35,"Bahnhofstrasse",28,istGekauft,Besitzer);
+    Strassen.add(38,"Parkstrasse",35,istGekauft,Besitzer);
+    Strassen.add(40,"Schlossallee",50,istGekauft,Besitzer);
 }
 
 // Setter-Methoden
@@ -70,10 +69,6 @@ public boolean setistGekauft (boolean istGekauft) {
     return istGekauft;
 }
 
-public boolean setmöchteKaufen (boolean möchteKaufen) {
-    this.möchteKaufen = möchteKaufen;
-    return möchteKaufen;
-}
 
 public String setBesitzer (String Besitzer) {
     this.Besitzer = Besitzer;
@@ -102,9 +97,6 @@ public int getistGekauft (boolean istGekauft) {
     return istGekauft;
 }
 
-public int getmöchteKaufen (boolean möchteKaufen) {
-    return möchteKaufen;
-}
 
 public String getBesitzer (String Besitzer) {
     return Besitzer;
@@ -112,24 +104,24 @@ public String getBesitzer (String Besitzer) {
 
 //Methoden
 
-public SpielerHinzufügen () {
-    System.out.println ("Du befindest Dich auf dem Feld " + ID);
+public SpielerHinzufuegen () {
+    System.out.println ("Du befindest Dich auf dem Feld: " + ID);
 }
 
-public StraßeHinzufügen () {
+public StrasseKaufen () {
     if (istGekauft = false){
-    System.out.println ("Möchtest du diese Straße kaufen?");
-       
-        if (möchteKaufen = true) {
+    System.out.println ("Moechtest du diese Strasse kaufen?");
+        boolean moechteKaufen;
+        if (moechteKaufen = true) {
         int Kontostand;
         int neuerKontostand = Kontostand - Miete;
         return neuerKontostand;
         }
         else {
-        System.out.println ("Du möchtest die Straße nicht kaufen");  
+        System.out.println ("Du moechtest die Strasse nicht kaufen.");  
         }
     } else { 
-    System.out.println ("Zahle die Miete in Höhe von" + Miete + "an den Besitzer der Straße.");    
+    System.out.println ("Zahle die Miete in Hoehe von " + Miete + " an den Besitzer der Strasse.");    
     }
 }
 }
