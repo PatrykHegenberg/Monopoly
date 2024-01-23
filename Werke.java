@@ -18,8 +18,8 @@ public class Werke extends Spielfeld {
     
     //Hinzufuegen der Werke
     {
-        Werke.add(13,"Elektrizitaetswerk",3000,25,istGekauft,Besitzer);
-        Werke.add(29,"Wasserwerk",3000,25,istGekauft,Besitzer);
+        Werke.add(12,"Elektrizitaetswerk",3000,25,istGekauft,Besitzer);
+        Werke.add(28,"Wasserwerk",3000,25,istGekauft,Besitzer);
     }  
     
     // Setter-Methoden
