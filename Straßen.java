@@ -18,28 +18,28 @@ private LinkedList<Strassen> Strassen = new LinkedList<String>(ID,Name,Kaufpreis
 
 //Hinzufuegen der Strassen
 {
-    Strassen.add(2,"Badstrasse",1200,2,istGekauft,Besitzer);
-    Strassen.add(4,"Turmstrasse",1200,4,istGekauft,Besitzer);
-    Strassen.add(7,"Chausseestrasse",2000,6,istGekauft,Besitzer);
-    Strassen.add(9,"Elisenstrasse",2000,6,istGekauft,Besitzer);
-    Strassen.add(10,"Poststrasse",2400,8,istGekauft,Besitzer);
-    Strassen.add(12,"Seestrasse",2800,10,istGekauft,Besitzer);
-    Strassen.add(14,"Hafenstrasse",10,istGekauft,Besitzer);
-    Strassen.add(15,"Neue Strasse",10,istGekauft,Besitzer);
-    Strassen.add(17,"Muenchnerstrasse",14,istGekauft,Besitzer);
-    Strassen.add(19,"Wienerstrasse",14,istGekauft,Besitzer);
-    Strassen.add(20,"Berlinerstrasse",16,istGekauft,Besitzer);
-    Strassen.add(22,"Theaterstrasse",18,istGekauft,Besitzer);
-    Strassen.add(24,"Museumstrasse",18,istGekauft,Besitzer);
-    Strassen.add(25,"Opernplatz",20,istGekauft,Besitzer);
-    Strasse.add(27,"Lessingstrasse",22,istGekauft,Besitzer);
-    Strassen.add(28,"Schillerstrasse",22,istGekauft,Besitzer);
-    Strassen.add(30,"Goethestrasse",24,istGekauft,Besitzer);
-    Strassen.add(32,"Rathausplatz",26,istGekauft,Besitzer);
-    Strassen.add(33,"Hauptstrasse",26,istGekauft,Besitzer);
-    Strassen.add(35,"Bahnhofstrasse",28,istGekauft,Besitzer);
-    Strassen.add(38,"Parkstrasse",35,istGekauft,Besitzer);
-    Strassen.add(40,"Schlossallee",50,istGekauft,Besitzer);
+    Strassen.add(1,"Badstrasse",1200,2,istGekauft,Besitzer);
+    Strassen.add(3,"Turmstrasse",1200,4,istGekauft,Besitzer);
+    Strassen.add(6,"Chausseestrasse",2000,6,istGekauft,Besitzer);
+    Strassen.add(8,"Elisenstrasse",2000,6,istGekauft,Besitzer);
+    Strassen.add(9,"Poststrasse",2400,8,istGekauft,Besitzer);
+    Strassen.add(11,"Seestrasse",2800,10,istGekauft,Besitzer);
+    Strassen.add(13,"Hafenstrasse",10,istGekauft,Besitzer);
+    Strassen.add(14,"Neue Strasse",10,istGekauft,Besitzer);
+    Strassen.add(16,"Muenchnerstrasse",14,istGekauft,Besitzer);
+    Strassen.add(18,"Wienerstrasse",14,istGekauft,Besitzer);
+    Strassen.add(19,"Berlinerstrasse",16,istGekauft,Besitzer);
+    Strassen.add(21,"Theaterstrasse",18,istGekauft,Besitzer);
+    Strassen.add(23,"Museumstrasse",18,istGekauft,Besitzer);
+    Strassen.add(24,"Opernplatz",20,istGekauft,Besitzer);
+    Strassen.add(26,"Lessingstrasse",22,istGekauft,Besitzer);
+    Strassen.add(27,"Schillerstrasse",22,istGekauft,Besitzer);
+    Strassen.add(29,"Goethestrasse",24,istGekauft,Besitzer);
+    Strassen.add(31,"Rathausplatz",26,istGekauft,Besitzer);
+    Strassen.add(32,"Hauptstrasse",26,istGekauft,Besitzer);
+    Strassen.add(34,"Bahnhofstrasse",28,istGekauft,Besitzer);
+    Strassen.add(37,"Parkstrasse",35,istGekauft,Besitzer);
+    Strassen.add(39,"Schlossallee",50,istGekauft,Besitzer);
 }
 
 // Setter-Methoden
