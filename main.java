@@ -22,9 +22,9 @@ public class main {
 	}
 {
         // JDBC-Verbindungsparameter
-        String jdbcUrl = "jdbc:mysql://localhost:3306/deineDatenbank";
-        String benutzername = "deinBenutzername";
-        String passwort = "deinPasswort";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/spielstand";
+        String benutzername = "admin_test";
+        String passwort = "passwort_test";
 
         // SQL-Abfrage
         String sqlAbfrage = "SELECT * FROM deineTabelle";
