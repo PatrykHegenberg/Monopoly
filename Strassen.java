@@ -10,6 +10,7 @@ public int Kaufpreis;
 public int Miete;
 public boolean istGekauft;
 public String Besitzer;
+public static LinkedList<Strassen> Strassen = new LinkedList<>();
 
 //Initailisieren der LinkedList "Strassen"
 
@@ -23,7 +24,6 @@ public Strassen (int ID, String Name, int preis, int Miete, boolean gekauft, Str
 
 public static LinkedList<Strassen> Strasse = new LinkedList<>();
 
-//Hinzufuegen der Strassen
 	static {
 	Strasse.add(new Strassen(1 ,"Badstrasse" ,60 ,2 ,false ,"Bank"));
 	Strasse.add(new Strassen(3,"Turmstrasse",60,4 ,false ,"Bank"));
@@ -48,7 +48,6 @@ public static LinkedList<Strassen> Strasse = new LinkedList<>();
     Strasse.add(new Strassen(37,"Parkstrasse", 350, 35, false ,"Bank"));
     Strasse.add(new Strassen(39,"Schlossallee", 400, 50, false ,"Bank"));
 }
-
 
 
 public Strassen getStrassen(int i) {

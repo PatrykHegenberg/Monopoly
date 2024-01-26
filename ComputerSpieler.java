@@ -9,10 +9,11 @@ public class ComputerSpieler extends Spieler {
     public boolean imGefaengnis;
 
 
-    public ComputerSpieler(String Name,String Farbe,int Startgeld,) {
+    public ComputerSpieler(String Name,String Farbe,int Startgeld) {
+        super();
         this.Name = Name;
         this.Farbe = Farbe;
-        this.geld = Geld;
+        this.Geld = Startgeld;
         this.position = 0; // Startposition auf dem Spielfeld
     }
     
@@ -21,18 +22,18 @@ public class ComputerSpieler extends Spieler {
     //Getter-Methoden
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public int getGeld() {
-        return geld;
+        return Geld;
     }
 
     public int getID() {
         return ID;
     }
 
-    public int getimGefaengnis() {
+    public boolean getimGefaengnis() {
         return imGefaengnis;
     }
 
@@ -52,12 +53,13 @@ public class ComputerSpieler extends Spieler {
 
     public void zahleMiete(int betrag) {
         // Hier kannst du die Logik für das Zahlen von Miete implementieren
-        geld -= betrag;
+        Geld -= betrag;
     }
 
     public void erhalteGeld(int betrag) {
         // Hier kannst du die Logik für das Erhalten von Geld implementieren
-        geld += betrag;
+        Geld += betrag;
+    }
         public int getRent() {
             int rent;
     
@@ -81,8 +83,6 @@ public class ComputerSpieler extends Spieler {
     
             return rent;
         }
-    }
-    }
 
     public void zieheEreigniskarte() {
         // Hier kannst du die Logik für das Ziehen einer Ereigniskarte implementieren

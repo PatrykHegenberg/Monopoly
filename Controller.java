@@ -28,7 +28,7 @@ public class Controller implements ActionListener {
 	}
 	
 	public void würfelGeworfen() { 
-		Spieler Hilfe = myModel.getAktuellerSpieler();
+		Spieler Hilfe = myModel.getAktuellerSpieler(false);
 		int wurfergebnis= myModel.wuerfelnAktuellerSpieler();
 		Hilfe.setPosition();
 		int id = Hilfe.getPosition();
@@ -63,7 +63,7 @@ public class Controller implements ActionListener {
 	
 	
 	public void StraßeKaufen() {
-		Spieler Hilfe = myModel.getAktuellerSpieler();
+		Spieler Hilfe = myModel.getAktuellerSpieler(true);
 		int id = Hilfe.getPosition();
 		Strassen gewählteStrasse = myModel.getStreetById(id);
 		int preis = gewählteStrasse.getKaufpreis();

@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 //Klasse Ereigniskarte erstellen und initailisieren der LinkedList "Ereigniskarten"
 
-public class EreigniskartenKlasse implements Karten {
+public class Ereigniskarten implements KarteInterface {
     private LinkedList<String> Ereigniskarten = new LinkedList<String>();
 
 //Hinzufuegen der Ereigniskarten
@@ -31,14 +31,14 @@ public class EreigniskartenKlasse implements Karten {
 
 //Methoden
 
-public string obersteKarteZiehen () {
-    string obersteKarte = Ereigniskarten.get(0);
-    return obersteKarte;
+public String obersteKarteZiehen () {
+    String obersteKarte = Ereigniskarten.get(0);
     System.out.println("Sie haben folgende Karte gezogen:" + obersteKarte);
+    return obersteKarte;
 }
 
 public void KartenVerschieben () {
-    string obersteKarte = Ereigniskarten.removeFirst(0);
+    String obersteKarte = Ereigniskarten.removeFirst();
     Ereigniskarten.addLast (obersteKarte);
 }
 

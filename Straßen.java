@@ -81,15 +81,15 @@ public int getID (int ID) {
     return ID;
 }
 
-public String getName (String Name) {
+public String getName () {
     return Name;
 }
 
-public int getKaufpreis (int Kaufpreis) {
+public int getKaufpreis () {
     return Kaufpreis;
 }
 
-public int getMiete (int Miete) {
+public int getMiete () {
     return Miete;
 }
 
@@ -98,7 +98,7 @@ public int getistGekauft (boolean istGekauft) {
 }
 
 
-public String getBesitzer (String Besitzer) {
+public String getBesitzer () {
     return Besitzer;
 }
 

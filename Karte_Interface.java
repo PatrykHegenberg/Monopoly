@@ -1,13 +1,12 @@
 import java.util.Collections;
 import java.util.LinkedList;
 
-public interface KarteInterface {
+public interface Karte_Interface {
 
-public string obersteKarteZiehen ();
+public String obersteKarteZiehen ();
 
 public void KartenVerschieben ();
 
 {
-Collections.shuffle ();
 }
 }

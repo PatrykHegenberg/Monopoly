@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 //Klasse Ereigniskarte erstellen und initailisieren der LinkedList "Gemeinschaftskarten"
 
-public class GemeinschaftskartenKlasse implements Karten {
+public class Gemeinschaftskarten implements KarteInterface {
     private LinkedList<String> Gemeinschaftskarten = new LinkedList<String>();
 
 //Hinzufuegen der Gemeinschaftskarten
@@ -28,14 +28,14 @@ public class GemeinschaftskartenKlasse implements Karten {
 
 //Methoden
 
-public string obersteKarteZiehen () {
-    string obersteKarte = Gemeinschaftskarten.get(0);
+public String obersteKarteZiehen () {
+    String obersteKarte = Gemeinschaftskarten.get(0);
     return obersteKarte;
     System.out.println("Sie haben folgende Karte gezogen:" + obersteKarte);
 }
 
 public void KartenVerschieben () {
-    string obersteKarte = Gemeinschaftskarten.removeFirst(0);
+    String obersteKarte = Gemeinschaftskarten.removeFirst();
     Gemeinschaftskarten.addLast (obersteKarte);
 }
 {
