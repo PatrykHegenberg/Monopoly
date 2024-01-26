@@ -26,6 +26,9 @@ public class Model {
 	public LinkedList<Spieler> getRundenablauf() {
 	        return Rundenablauf;
 	    }
+	public LinkedList<Strassen> getStrassen() {
+        return strassenListe;
+    }
 	 
 	 int aktuellerSpielerIndex = 0;
 	 

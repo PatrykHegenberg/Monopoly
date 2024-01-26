@@ -30,7 +30,16 @@ public class View extends JFrame implements ActionListener {
 		public int wurfergebnis;
 		public Color randomColor;
 		
+		//Spielerdaten anzeigen
+		String[] playerColumnNames = {"Spieler", "Geld"};
+	    public DefaultTableModel playerTableModel = new DefaultTableModel(null, playerColumnNames);
+	    JTable playerTable = new JTable(playerTableModel);
 		
+	    //Straßendaten anzeigen
+	    String[] streetsColumnNames = {"Straße", "Besitzer"};
+        public DefaultTableModel streetsTableModel = new DefaultTableModel(null, streetsColumnNames);
+        JTable streetsTable = new JTable(streetsTableModel);
+	    
 		private JPanel playerPanel = new JPanel();
         // Beispiel-Button hinzufügen
         JButton SpielerHinzufügen = new JButton("Spieler hinzufügen");
@@ -40,7 +49,8 @@ public class View extends JFrame implements ActionListener {
         JButton StraßeKaufen = new JButton("Straße kaufen");
         // Beispiel-Textfeld hinzufügen
         JTextField SpielerName = new JTextField("Dein Name");
-        private JScrollPane scrollPane = new JScrollPane();
+        private JScrollPane scrollPane = new JScrollPane(playerTable);
+        private JScrollPane scrollPane2 = new JScrollPane(streetsTable);
         private JLabel wurf = new JLabel ("Wurfergebnis ");
         
 		private JPanel panel_20 = createColoredPanel("Frei Parken", new Color(252, 199, 211));
@@ -178,7 +188,8 @@ public class View extends JFrame implements ActionListener {
 			getContentPane().setLayout(null);
 			playerPanel.setLayout(new BoxLayout(playerPanel, BoxLayout.Y_AXIS));
 			
-			scrollPane.setBounds(1270, 10, 250, 800);
+			scrollPane.setBounds(1270, 10, 250, 400);
+			scrollPane2.setBounds(1270,410, 250, 400 );
 			playerPanel.setBounds(1070, 10, 200, 200);
 			wurf.setBounds(1070, 210, 250, 800);
 			
@@ -308,6 +319,7 @@ public class View extends JFrame implements ActionListener {
 			playerPanel.add(StraßeKaufen);
 			getContentPane().add(wurf);
 			getContentPane().add(scrollPane);
+			getContentPane().add(scrollPane2);
 			getContentPane().add(playerPanel);
 			getContentPane().add(panel_0);
 			getContentPane().add(panel_1);
@@ -365,6 +377,27 @@ public class View extends JFrame implements ActionListener {
 		this.myController = myController;
 	}
 	
+	public void updatePlayerTable(LinkedList<Spieler> spielerList) {
+	    // Lösche alle vorhandenen Daten in der Tabelle
+	    playerTableModel.setRowCount(0);
+
+	    // Füge die aktualisierten Daten hinzu
+	    for (Spieler spieler : spielerList) {
+	        playerTableModel.addRow(new Object[]{spieler.getName(), spieler.getGeld()});
+	    }
+	}
+
+    // Methode zum Aktualisieren der Straßen-Informationen in der Tabelle
+	public void updateStreetsTable(LinkedList<Strassen> strassenList) {
+	    // Lösche alle vorhandenen Daten in der Tabelle
+	    streetsTableModel.setRowCount(0);
+
+	    // Füge die aktualisierten Daten hinzu
+	    for (Strassen strasse : strassenList) {
+	        streetsTableModel.addRow(new Object[]{strasse.getName(), strasse.getBesitzer()});
+	    }
+	}
+    
 	public void setPosition(int id) {
 	    	this.Position = setNeuePosition(id);
 	}
@@ -407,6 +440,13 @@ public class View extends JFrame implements ActionListener {
         repaint();
     }
     
+    public void hideStraßeKaufenButton() {
+        // Display the "Straße kaufen" button
+        StraßeKaufen.setVisible(false);
+        revalidate();
+        repaint();
+    }
+    
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == SpielerHinzufügen) {
@@ -418,4 +458,5 @@ public class View extends JFrame implements ActionListener {
 	}
 
 	}
+
 }

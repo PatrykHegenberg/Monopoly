@@ -22,6 +22,8 @@ public class Controller implements ActionListener {
 	    myModel.spielerHinzufuegen(hilfe);
 	    System.out.print(myModel.getRundenablauf());
 	    myView.setColor(hilfe.getFarbe());
+	    myView.updatePlayerTable(myModel.getRundenablauf());
+	    myView.updateStreetsTable(myModel.getStrassen());
 	    myView.repaint();
 	}
 	
@@ -31,6 +33,8 @@ public class Controller implements ActionListener {
 		Hilfe.setPosition();
 		int id = Hilfe.getPosition();
 		myView.setWurf(wurfergebnis);
+		myView.updatePlayerTable(myModel.getRundenablauf());
+	    myView.updateStreetsTable(myModel.getStrassen());
 		myView.setPosition(id);
 		myView.repaint();
 		if (id == 1 || id == 3 || id == 6 || id == 8 || id == 9 || id == 11 || id == 13 || id == 14 || id == 16 || id == 18 || id == 19 || id == 21 || id == 23 || id == 24 || id == 26 || id == 27 || id == 29 || id == 31 || id == 32 || id == 34) {
@@ -41,6 +45,7 @@ public class Controller implements ActionListener {
 	            myView.repaint();
 	            myView.revalidate();
 	        } else {
+	        	myView.hideStraßeKaufenButton();
 	        	int Miete = gewählteStrasse.getMiete();
 	        	String hilft = gewählteStrasse.getBesitzer();
 	        		if (Hilfe.getName().equals(hilft)) {
@@ -51,6 +56,8 @@ public class Controller implements ActionListener {
 	        		}
 	        	
 	        }
+		}else {
+			myView.hideStraßeKaufenButton();
 		}
 	}
 	
@@ -65,6 +72,10 @@ public class Controller implements ActionListener {
 		Hilfsbank.geldBekommen(preis);
 		gewählteStrasse.setBesitzer(Hilfe.getName());
 		System.out.println(gewählteStrasse.getBesitzer());
+		myView.updatePlayerTable(myModel.getRundenablauf());
+	    myView.updateStreetsTable(myModel.getStrassen());
+	    myView.repaint();
+        myView.revalidate();
 	}
 
 	@Override
