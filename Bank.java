@@ -1,7 +1,3 @@
-package Monopoly2;
-
-import java.util.HashMap;
-import java.util.Map;
 
 	public class Bank {
 		
@@ -17,30 +13,19 @@ import java.util.Map;
 	        this.hauser = 32;   
 	        this.hotels = 12;  
 	    }
-
-	    // Methode zur Ausgabe von Geld entsprechend den Monopoly-Gebühren
-	    
-		/*public Map<Integer, Integer> getMonopolyMoney() {
-	        
-			Map<Integer, Integer> money = new HashMap<>();
-	        
-	        money.put(500, 2); // 2 × 500 Euro
-	        money.put(100, 4); // 4 × 100 Euro
-	        money.put(50, 1);  // 1 × 50 Euro
-	        money.put(20, 1);  // 1 × 20 Euro
-	        money.put(10, 2);  // 2 × 10 Euro
-	        money.put(5, 1);   // 1 × 5 Euro
-	        money.put(1, 5);   // 5 × 1 Euro
-	        
-	        return money;
-	        
-	        
-	    }*/
 		
+	    public void setGuthaben(int betrag) {
+	    	guthaben = betrag;
+	    }
+	    
+	    public int getGuthaben() {
+	    	return guthaben;
+	    }
+	    
 	    // Methode, um Geld von der Bank zu erhalten
 	    public void geldBekommen(int betrag) {
 	        if (betrag > 0 && betrag <= guthaben) {
-	            guthaben -= betrag;
+	            guthaben += betrag;
 	            
 	        } else {
 	            System.out.println("Ungültiger Betrag oder nicht genügend Guthaben in der Bank.");

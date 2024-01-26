@@ -9,15 +9,39 @@ public class Spieler {
     private int geld;
     private int position;
     private boolean imGefaengnis;
-    private int gesamtWurf;
+    private int gesamtwurf;
 
-    public Spieler(String name, Color farbe) {
+    public Spieler(String name) {
         this.name = name;
-        this.farbe = farbe;
-        this.geld = 1500; // Startkapital in Monopoly
+        this.farbe = zufaelligeFarbe();
+        this.setGeld(1500); 
         this.position = 0; // Spieler beginnt auf dem Los-Feld
         this.imGefaengnis = false; // Spieler startet nicht im Gefängnis
     }
+    
+    // Methode zur Generierung einer zufälligen Farbe
+
+
+	private Color zufaelligeFarbe() {
+        Random rand = new Random();
+        // Nimm einen zufälligen RGB-Wert
+        int r = rand.nextInt(256);
+        int g = rand.nextInt(256);
+        int b = rand.nextInt(256);
+        // Erzeuge die Farbe
+        return new Color(r, g, b);
+    }
+    
+    // Setter_Methoden
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+
+	public void setGeld(int geld) {
+		this.geld = geld;
+	}
 
     // Getter-Methoden
 
@@ -42,7 +66,7 @@ public class Spieler {
     }
     
     public void setPosition() {
-    	position += this.gesamtWurf;
+    	position += this.gesamtwurf;
     	
     	final int MAX_POSITION = 39;
     	if (position >= MAX_POSITION) {
@@ -55,20 +79,20 @@ public class Spieler {
 
     // Methoden für Aktionen des Spielers
 
-    public void würfeln() {
+    public int würfeln() {
         // Würfeln mit zwei Würfeln (1 bis 6)
     	
-    	Würfel würfel = new Würfel();
-    	
+    	Würfel würfel1 = new Würfel();
+    	Würfel würfel2 = new Würfel();
 
-    	würfel.wuerfeln1();
-    	würfel.wuerfeln2();
-        int gesamtwurf = würfel.getSumme();
+    	würfel1.wuerfeln1();
+    	würfel2.wuerfeln2();
+        int gesamtwurf = würfel1.getErgebnis1() + würfel2.getErgebnis2();
 
-        System.out.println(name + " würfelt eine " + würfel.getErgebnis1() + " und eine " + würfel.getErgebnis2() + " (Gesamtwurf: " + gesamtwurf + ")");
+        System.out.println(name + " würfelt eine " + würfel1.getErgebnis1() + " und eine " + würfel2.getErgebnis2() + " (Gesamtwurf: " + gesamtwurf + ")");
         
-        this.gesamtWurf = würfel.getSumme();
- 
+        this.gesamtwurf = gesamtwurf;
+        return gesamtwurf;
 
       
 		// Optional: Überprüfen, ob der Spieler das Spielfeld einmal durchlaufen hat (zum Beispiel bei Monopoly)
@@ -84,8 +108,8 @@ public class Spieler {
 
     public void straßenKaufen(String straße) {
         int kaufpreis = 200; // Beispielkaufpreis für eine Straße
-        if (geld >= kaufpreis) {
-            geld -= kaufpreis;
+        if (getGeld() >= kaufpreis) {
+            setGeld(getGeld() - kaufpreis);
             System.out.println(name + " hat die Straße " + straße + " gekauft.");
         } else {
             System.out.println(name + " hat nicht genug Geld, um die Straße zu kaufen.");
@@ -94,8 +118,8 @@ public class Spieler {
 
     public void hausKaufen(String straße) {
         int hauspreis = 100; // Beispielkaufpreis für ein Haus
-        if (geld >= hauspreis) {
-            geld -= hauspreis;
+        if (getGeld() >= hauspreis) {
+            setGeld(getGeld() - hauspreis);
             System.out.println(name + " hat ein Haus auf der Straße " + straße + " gekauft.");
         } else {
             System.out.println(name + " hat nicht genug Geld, um ein Haus zu kaufen.");
@@ -104,16 +128,17 @@ public class Spieler {
 
     public void hotelKaufen(String straße) {
         int hotelpreis = 500; // Beispielkaufpreis für ein Hotel
-        if (geld >= hotelpreis) {
-            geld -= hotelpreis;
+        if (getGeld() >= hotelpreis) {
+            setGeld(getGeld() - hotelpreis);
             System.out.println(name + " hat ein Hotel auf der Straße " + straße + " gekauft.");
         } else {
             System.out.println(name + " hat nicht genug Geld, um ein Hotel zu kaufen.");
         }
     }
 
-    public void mieteZahlen(int betrag) {
-        geld -= betrag;
+    public void mieteZahlen(int betrag, Spieler Empfänger) {
+        setGeld(getGeld() - betrag);
+        Empfänger.setGeld(Empfänger.getGeld() + betrag);
         System.out.println(name + " zahlt Miete in Höhe von " + betrag + " Euro.");
     }
 
@@ -129,7 +154,14 @@ public class Spieler {
 
     @Override
     public String toString() {
-        return "Spieler " + name + " - Farbe: " + farbe + ", Geld: " + geld + ", Position: " + position + ", Im Gefängnis: " + imGefaengnis;
+        return "Spieler " + name + " - Farbe: " + farbe + ", Geld: " + getGeld() + ", Position: " + position + ", Im Gefängnis: " + imGefaengnis;
     }
+
+	public void bekommtGeld(int betrag) {
+		setGeld(getGeld() + betrag);
+		
+	}
+
+
 }
 

@@ -1,27 +1,32 @@
 //Klasse "Werke" erstellen
+import java.util.LinkedList;
+import java.util.Collections;
 
 public class Werke extends Spielfeld {
-
-    //Attribute
-    
-    public int ID;
-    public String Name;
-    public int Kaufpreis;
+	//Attribute
+	public int Kaufpreis;
     public int Miete;
     public boolean istGekauft;
     public String Besitzer;
-    
-    //Initailisieren der LinkedList "Werke"
-    
-    
-    private LinkedList<Werke> Werke = new LinkedList<String>(ID,Name,Kaufpreis,Miete,istGekauft,Besitzer);
-    
+	
+	public Werke (int ID, String Name, int preis, int Miete, boolean gekauft, String Besitz) {
+		super(ID, Name);
+		this.Kaufpreis = preis;
+		this.Miete = Miete;
+		this.istGekauft = gekauft;
+		this.Besitzer = Besitz;	
+	}
+	
     //Hinzufuegen der Werke
-    {
-        Werke.add(12,"Elektrizitaetswerk",3000,25,istGekauft,Besitzer);
-        Werke.add(28,"Wasserwerk",3000,25,istGekauft,Besitzer);
-    }  
+    Werke eWerk = new Werke(12 ,"Elektrizitaetswerk" ,150 ,25 ,false ,"Bank");
+    Werke wWerk = new Werke(28 ,"Wasserwerk" ,150 ,25 ,false ,"Bank");
     
+    private LinkedList<Werke> Werk = new LinkedList<>();
+    {
+    Werk.add (eWerk);
+    Werk.add(wWerk);
+    }
+ 
     // Setter-Methoden
     
     public int setID (int ID) {
@@ -73,7 +78,7 @@ public class Werke extends Spielfeld {
         return Miete;
     }
     
-    public int getistGekauft (boolean istGekauft) {
+    public boolean getistGekauft (boolean istGekauft) {
         return istGekauft;
     }
     
@@ -84,18 +89,16 @@ public class Werke extends Spielfeld {
     
    //Methoden
 
-public SpielerHinzufuegen () {
-    System.out.println ("Du befindest Dich auf dem Feld: " + ID);
-}
 
-public WerkKaufen () {
+
+@Override
+public void WerkKaufen () {
     if (istGekauft = false){
     System.out.println ("Moechtest du dieses Werk kaufen?");
         boolean moechteKaufen;
         if (moechteKaufen = true) {
-        int Kontostand;
+        int Kontostand = 0;
         int neuerKontostand = Kontostand - Miete;
-        return neuerKontostand;
         }
         else {
         System.out.println ("Du moechtest das Werk nicht kaufen.");  
@@ -104,4 +107,18 @@ public WerkKaufen () {
     System.out.println ("Zahle die Miete in Hoehe von " + Miete + " an den Besitzer des Werks.");    
     }
 }
+
+@Override
+public void BahnhofKaufen() {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public int getID() {
+	return ID;
+	// TODO Auto-generated method stub
+	
+}
+
 }

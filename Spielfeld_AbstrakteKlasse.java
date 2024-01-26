@@ -5,14 +5,15 @@ abstract class Spielfeld {
 public int ID;
 public String Name;
 
+public Spielfeld (int id, String name) {
+	this.ID = id;
+	this.Name = name;
+}
 //Methoden
+public abstract int getID();
 
-public abstract SpielerHinzufuegen ();
+public abstract void BahnhofKaufen();
 
-public abstract StrasseKaufen ();
-
-public abstract BahnhofKaufen ();
-
-public abstract WerkKaufen ();
+public abstract void WerkKaufen();
 
 }

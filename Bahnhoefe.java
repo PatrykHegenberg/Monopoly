@@ -1,27 +1,37 @@
 //Klasse "Bahnhoefe" erstellen
-
+import java.util.LinkedList;
 public class Bahnhoefe extends Spielfeld {
 
     //Attribute
-    
-    public int ID;
-    public String Name;
-    public int Kaufpreis;
+	public int Kaufpreis;
     public int Miete;
     public boolean istGekauft;
     public String Besitzer;
     
+    public Bahnhoefe (int ID, String Name, int preis, int Miete, boolean gekauft, String Besitz) {
+    	super(ID, Name);
+    	this.Kaufpreis = preis;
+    	this.Miete = Miete;
+    	this.istGekauft = gekauft;
+    	this.Besitzer = Besitz;	
+    }
+    
     //Initailisieren der LinkedList "Bahnhoefe"
+
+    Bahnhoefe Suedbahnhof = new Bahnhoefe(5,"Suedbahnhof",200,25,false ,"Bank");
+    Bahnhoefe Westbahnhof = new Bahnhoefe(15,"Westbahnhof",200,25,false ,"Bank");
+    Bahnhoefe Nordbahnhof = new Bahnhoefe(25,"Nordbahnhof",200,25,false ,"Bank");
+    Bahnhoefe Hauptbahnhof = new Bahnhoefe(35,"Hauptbahnhof",200,6,false ,"Bank")
+    		;
+    private LinkedList<Bahnhoefe> Bahnhof = new LinkedList<>();
     
-    
-    private LinkedList<Bahnhoefe> Bahnhoefe = new LinkedList<String>(ID,Name,Kaufpreis,Miete,istGekauft,Besitzer);
-    
+   
     //Hinzufuegen der Bahnhoefe
     {
-        Bahnhoefe.add(5,"Suedbahnhof",4000,25,istGekauft,Besitzer);
-        Bahnhoefe.add(15,"Westbahnhof",4000,25,istGekauft,Besitzer);
-        Bahnhoefe.add(25,"Nordbahnhof",4000,25,istGekauft,Besitzer);
-        Bahnhoefe.add(35,"Hauptbahnhof",4000,6,istGekauft,Besitzer);
+        Bahnhof.add(Suedbahnhof);
+        Bahnhof.add(Westbahnhof);
+        Bahnhof.add(Nordbahnhof);
+        Bahnhof.add(Hauptbahnhof);
     }  
     
     // Setter-Methoden
@@ -75,7 +85,7 @@ public class Bahnhoefe extends Spielfeld {
         return Miete;
     }
     
-    public int getistGekauft (boolean istGekauft) {
+    public boolean getistGekauft (boolean istGekauft) {
         return istGekauft;
     }
     
@@ -86,18 +96,15 @@ public class Bahnhoefe extends Spielfeld {
     
    //Methoden
 
-public SpielerHinzufuegen () {
-    System.out.println ("Du befindest Dich auf dem Feld: " + ID);
-}
 
-public BahnhofKaufen () {
+@Override
+public void BahnhofKaufen () {
     if (istGekauft = false){
     System.out.println ("Moechtest du diesen Bahnhof kaufen?");
         boolean moechteKaufen;
         if (moechteKaufen = true) {
-        int Kontostand;
+        int Kontostand = 0;
         int neuerKontostand = Kontostand - Miete;
-        return neuerKontostand;
         }
         else {
         System.out.println ("Du moechtest die Bahnhof nicht kaufen.");  
@@ -105,5 +112,18 @@ public BahnhofKaufen () {
     } else { 
     System.out.println ("Zahle die Miete in Hoehe von " + Miete + " an den Besitzer des Bahnhofs.");    
     }
+}
+
+@Override
+public void WerkKaufen() {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public int getID() {
+	return ID;
+	// TODO Auto-generated method stub
+	
 }
 }

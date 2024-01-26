@@ -1,42 +1,44 @@
-package Monopoly2;
+import java.util.Random;
 
 public class Würfel {
+	int ergebnis1;
+	int ergebnis2;
+    int summe;    
+    // Methode zum Würfeln eines 6-seitigen Würfels
+
+    public void wuerfeln1 () {
+        Random zufällig1 = new Random();
+
+        // Die nextInt-Methode gibt einen zufälligen Wert zwischen 0 (inklusive) und 6 (exklusive) zurück,
+        // daher wird 1 addiert, um einen Wert zwischen 1 und 6 zu erhalten.
+
+        ergebnis1 = zufällig1.nextInt(6) + 1;
+    }
+
+    // Methode zum Würfeln eines 6-seitigen Würfels
+
+    public void wuerfeln2 () {
+        Random zufällig2 = new Random();
+
+        // Die nextInt-Methode gibt einen zufälligen Wert zwischen 0 (inklusive) und 6 (exklusive) zurück,
+        // daher wird 1 addiert, um einen Wert zwischen 1 und 6 zu erhalten.
+
+        ergebnis2 = zufällig2.nextInt(6) + 1;
+    }
+    // Addieren der Würfe und Ausgabe
+    
+    public int getSumme(){
+    summe = ergebnis1 + ergebnis2;
+    return summe;
+    }
+    
+    public int getErgebnis1 () {
+    	return ergebnis1;
+    }
+    
+    public int getErgebnis2 () {
+    	return ergebnis2;
+    }
+
 	
-	private int ergebnis1;
-	private int ergebnis2;
-	private boolean pasch;
-	
-	
-	public Würfel() {
-		this.role();
-		
-	}
-	
-	public int[] getResult() {
-		int[] arr = new int[2];
-		arr[0] = this.ergebnis1;
-		arr[1] = this.ergebnis2;
-		return arr;
-	}
-	
-	public int getErgibnis1( ) {
-		return this.ergebnis1;
-	}
-	
-	public int getErgibnis2( ) {
-		return this.ergebnis2;
-	}
-	
-	public int getGesamtWurf() {
-		return this.ergebnis1 + this.ergebnis2;
-	}
-	
-	public void role () {
-		this.ergebnis1 = (int) (Math.random() * 6) + 1;
-		this.ergebnis2 = (int) (Math.random() * 6) + 1;
-	}
-	
-	public boolean getIsPasch () {
-		return true;
-	}
 }
